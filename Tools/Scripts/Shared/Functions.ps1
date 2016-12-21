@@ -17,6 +17,8 @@ function BuildSolution($solution, $properties)
   $directory = Split-Path -parent $path
   $filename = Split-Path -leaf $path
 
+  .\Tools\Programs\nuget.exe restore $solution
+
   $location = $(Get-Location)
   Set-Location $directory
 
